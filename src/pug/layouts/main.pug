@@ -1,0 +1,32 @@
+doctype html
+head
+    title Jonathan's Website
+    block scripts append 
+        
+    block css append
+        link(rel="stylesheet" href="css/main.css")
+
+body
+    block nav
+        header.p-3.bg-dark.text-white
+            .container 
+                .flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+                    a.d-flex.align-items-center.mb-2.mb-lg-0.text-decoration-none(href="index.html") JL
+
+                    ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
+                        li
+                            a.nav-link.px-2.text-secondary(href="index.html") Home
+                        li
+                            a.nav-link.px-2.text-secondary(href="resume.html") Resume
+                        li
+                            a.nav-link.px-2.text-secondary(href="projects.html") Projects
+
+                span.text-end
+                    button.btn.btn-outline-light(type="button")
+                        a(href="mailto:jonathan.loewen@outlook.com") Contact Me
+
+    block content 
+
+    block footer
+        .footer
+             
