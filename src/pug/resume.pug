@@ -1,139 +1,170 @@
 extends layouts/main.pug
 
+block scripts
+    script(src="js/resume.js")
+
 block content
-    h2 Jonathan Loewen
-    h4 3rd Year Mechanical Engineering Student from Langley, BC
-    a(href="mailto:jonathan.loewen@outlook.com") jonathan.loewen@outlook.com |
-    a(href="tel:7785807784") 778 580-7784
-    hr
-    span#skill-span
-        h2#skills Skills
-        h4#software Software 
-        ul 
-            li AutoCAD
-            li SolidWorks
-            li Python
-            li MS Office
-            li Matlab
-            li C/C++
-            li Linux 
-        h4#hardware Hardware 
-        ul
-            li Arduino
-            li 3D printers
-            li Latheli Welding
-            li Oscilloscope
-            li Prototyping
-            li Ultrasonic Thickness Meter
-            li Flow Meter
-        h4#general General
-        ul
-            li Class 5 BC Drivers License
-            li Leadership
-            li Interpersonal Skills
-            li Detail Oriented
-            li Time Management
+    .card 
+        .card-body 
+            h2.card-title Jonathan Loewen
+            h4.card-text 3rd Year Mechanical Engineering Student from Langley, BC
+            input.btn.btn-lg.btn-primary(type='button' onclick="window.location.href='mailto:jonathan.loewen@outlook.com'" value="jonathan.loewen@outlook.com")
+            input.btn.btn-lg.btn-primary(type='button' onclick="window.location.href='tel:7785807784'" value="(778) 580-7784")
+    .row.row-cols-1.row-cols-md-2.g-4
+        span#skill-span.card
+            h2#skills Skills
+            .card
+                h4#software Software
+                ul
+                    button.btn.btn-outline-secondary.m-2(type="button") AutoCAD 
+                    button.btn.btn-outline-secondary.m-2(type="button") SolidWorks
+                    button.btn.btn-outline-secondary.m-2(type="button") Python
+                    button.btn.btn-outline-secondary.m-2(type="button") MS Office
+                    button.btn.btn-outline-secondary.m-2(type="button") Matlab
+                    button.btn.btn-outline-secondary.m-2(type="button") C/C++
+                    button.btn.btn-outline-secondary.m-2(type="button") Linux 
 
-    span#education-span
-        h2#education Education
-        div.specific-education
-            h4.education-title UBC Okanagan 
-            h5.education-sub BASc. Mechanical Engineering 
-            .education-time 09/2018 - Present 
-            .education-place Kelowna, BC
-        div.specific-education
-            h4.education-title Kwantlen Polytechnic University
-            h5.education-sub First Year Engineering
-            .education-time 09/2017 - 04/2018
-            .education-place Surrey, BC
+            .card 
+                h4#hardware Hardware
+                ul 
+                    button.btn.btn-outline-secondary.m-2(type="button") Arduino
+                    button.btn.btn-outline-secondary.m-2(type="button") 3D printers
+                    button.btn.btn-outline-secondary.m-2(type="button") Latheli Welding
+                    button.btn.btn-outline-secondary.m-2(type="button") Oscilloscope
+                    button.btn.btn-outline-secondary.m-2(type="button") Prototyping
+                    button.btn.btn-outline-secondary.m-2(type="button") Ultrasonic Thickness Meter
+                    button.btn.btn-outline-secondary.m-2(type="button") Flow Meter
+            
+            .card
+                h4#general General
+                ul
+                    button.btn.btn-outline-secondary.m-2(type="button") Class 5 BC Drivers License
+                    button.btn.btn-outline-secondary.m-2(type="button") Leadership
+                    button.btn.btn-outline-secondary.m-2(type="button") Interpersonal Skills
+                    button.btn.btn-outline-secondary.m-2(type="button") Detail Oriented
+                    button.btn.btn-outline-secondary.m-2(type="button") Time Management
 
-    span#coursework-span
-        h2#coursework Coursework
-        h4#extracurricular Extracurricular
-        ul 
-            li UBCO Aerospace Club
-            li UBCO CFD Lab
-        h4#undergraduate Undergraduate
-        ul 
-            li Fluid Dynamics 2
+        span#education-span.card
+            h2#education Education
+            .card
+                div.specific-education
+                    h4.education-title UBC Okanagan 
+                    h5.education-sub BASc. Mechanical Engineering 
+                    .education-time 09/2018 - Present 
+                    .education-place Kelowna, BC
+            .card 
+                div.specific-education
+                    h4.education-title Kwantlen Polytechnic University
+                    h5.education-sub First Year Engineering
+                    .education-time 09/2017 - 04/2018
+                    .education-place Surrey, BC
 
-    span#hobbies-span
-        h2#hobbies hobbies
-        ul 
-            li Computational Fluid Dynamics
-            li Machine Learning 
-            li Music 
-            li Learning New Software 
-            li 3D Printing/Rapid Prototyping
+        span#coursework-span.card
+            h2#coursework.card-title Coursework
+            h4#extracurricular Extracurricular
+            ul 
+                button.btn.btn-outline-secondary.m-2(type="button") UBCO Aerospace Club
+                button.btn.btn-outline-secondary.m-2(type="button") UBCO CFD Lab
+            h4#undergraduate Undergraduate
+            ul 
+                button.btn.btn-outline-secondary.m-2(type="button") Fluid Dynamics 2
 
-    span#work-experience-span
-        h2#work-experience Work Experience
-        // Job 1
-        h4#lantic Lantic Inc.
-        h5 Engineering Coop Student
-        h5 01/2020 - 12/2020
-        h5 Vancouver, BC
-        ul
-            li Managed and planned contractor work on site for 2 independent projects.
-            li Produced AutoCAD sketches for project proposals and quotes
-            li Learned about and used various piping and other design standards.
-            li
-                | Wrote documents requesting funds, completed projects, and technical
-                | reports.
-            li Completed pump sizing calculations which I used to get a supplier's quote.
-        h4#cfd-lab UBCO CFD LAB
-        h5 Undergraduate Research Assistant
-        .work-time 09/2019 - 12/2019
-        .work-place Kelowna, BC
-        ul
-            li Learned advanced CFD topics for analyzing fluid flow in small (capillary) tubes.
-            li Analyzed simulation and looked for anomalies to present in a weekly meeting.
-            li Automated workflow in python to more efficiently use time.
-        h4#mcasphalt MCASPHALT INC. 
-        h5 General Labourer
-        .work-time 04/2018 - 08/2018
-        .work-place Langley, BC
-        ul
-            li
-                | Co-ordinated with power engineers to utilize and maintain heavy machinery
-                | (pumps).
-            li
-                | Demonstrated excellent communication skills when training four employees in
-                | a short amount of time.
+        span#hobbies-span.card
+            h2#hobbies.card-title Hobbies
+            ul 
+                button.btn.btn-outline-secondary.m-2(type="button") Computational Fluid Dynamics
+                button.btn.btn-outline-secondary.m-2(type="button") Machine Learning 
+                button.btn.btn-outline-secondary.m-2(type="button") Music 
+                button.btn.btn-outline-secondary.m-2(type="button") Learning New Software 
+                button.btn.btn-outline-secondary.m-2(type="button") 3D Printing/Rapid Prototyping
 
-    span#technical-projects-span
-        h2#technical-projects Technical Projects
-        h4#slr Self Landing Model Rocket
-        h5 UBCO Aerospace Club
-        .project-time 01/2019 - 12/2019
-        .project-place UBC Okanagan
-        ul
-            li Managed 3 subteams with 8+ students combined.
-            li Interfaced between executives and subteams to show progress, set goals, and explain needs.
+        span#work-experience-span.card
+            h2#work-experience.card-title Work Experience
+            .card
+                .card-header.accordion
+                    h4#lantic Lantic Inc.
+                    h5 Engineering Coop Student
+                .card-body
+                    h5 01/2020 - 12/2020
+                    h5 Vancouver, BC
+                    ul
+                        li Managed and planned contractor work on site for 2 independent projects.
+                        li Produced AutoCAD sketches for project proposals and quotes
+                        li Learned about and used various piping and other design standards.
+                        li
+                            | Wrote documents requesting funds, completed projects, and technical
+                            | reports.
+                        li Completed pump sizing calculations which I used to get a supplier's quote.
+            .card
+                .card-header
+                    h4#cfd-lab UBCO CFD LAB
+                    h5 Undergraduate Research Assistant
+                .card-body
+                    .work-time 09/2019 - 12/2019
+                    .work-place Kelowna, BC
+                    ul
+                        li Learned advanced CFD topics for analyzing fluid flow in small (capillary) tubes.
+                        li Analyzed simulation and looked for anomalies to present in a weekly meeting.
+                        li Automated workflow in python to more efficiently use time.
+            .card
+                .card-header
+                    h4#mcasphalt MCASPHALT INC. 
+                    h5 General Labourer
+                .card-body
+                    .work-time 04/2018 - 08/2018
+                    .work-place Langley, BC
+                    ul
+                        li
+                            | Co-ordinated with power engineers to utilize and maintain heavy machinery
+                            | (pumps).
+                        li
+                            | Demonstrated excellent communication skills when training four employees in
+                            | a short amount of time.
 
-        h4#popsicle-bridge Popsicle Bridge
-        h5 Mechanics Class Project
-        .project-time 01/2018 – 03/2018
-        .project-place KPU
-        ul
-            li Designed, tested, and manufactured a popsicle bridge using joint analysis in Maple.
-            li Modelled using 2D and 3D CAD software for truss testing.
-        h4#line-following-robot Line Following Robot
-        h5 Microcontrollers Class Project
-        .project-time 01/2018 – 03/2018
-        .project-place KPU
-        ul
-            li Led development of software for an adaptive line following robot.
-            li Learned how to use git for version control.
-            li Demonstrated ability to prepare for, and adapt to, unforseen circumstances.
-    
-    span#volunteer-experience-span
-        h2#volunteer-experience volunteer-experience
-        h4#slr Head of Visual Media
-        h5 Aldergrove Alliance Church
-        .volunteer-time 09/2013 – 12/2020
-        .volunteer-place Langley, BC
-        ul
-            li Scheduled and trained volunteers on presentation software.
-            li Evaluated potential new software.
-            li Assisted with the technology shift and upgrades required for Covid-19.
+        span#technical-projects-span.card
+            h2#technical-projects Technical Projects
+            .card
+                .card-header
+                    h4#slr Self Landing Model Rocket
+                    h5 UBCO Aerospace Club
+                .card-body
+                    .project-time 01/2019 - 12/2019
+                    .project-place UBC Okanagan
+                    ul
+                        li Managed 3 subteams with 8+ students combined.
+                        li Interfaced between executives and subteams to show progress, set goals, and explain needs.
+            .card 
+                .card-header 
+                    h4#popsicle-bridge Popsicle Bridge
+                    h5 Mechanics Class Project
+                .card-body
+                    .project-time 01/2018 – 03/2018
+                    .project-place KPU
+                    ul
+                        li Designed, tested, and manufactured a popsicle bridge using joint analysis in Maple.
+                        li Modelled using 2D and 3D CAD software for truss testing.
+            .card 
+                .card-header
+                    h4#line-following-robot Line Following Robot
+                    h5 Microcontrollers Class Project
+                .card-body
+                    .project-time 01/2018 – 03/2018
+                    .project-place KPU
+                    ul
+                        li Led development of software for an adaptive line following robot.
+                        li Learned how to use git for version control.
+                        li Demonstrated ability to prepare for, and adapt to, unforseen circumstances.
+        
+        span#volunteer-experience-span.card
+            h2#volunteer-experience volunteer-experience
+            .card 
+                .card-header 
+                    h4#slr Head of Visual Media
+                    h5 Aldergrove Alliance Church
+                .card-body
+                    .volunteer-time 09/2013 – 12/2020
+                    .volunteer-place Langley, BC
+                    ul
+                        li Scheduled and trained volunteers on presentation software.
+                        li Evaluated potential new software.
+                        li Assisted with the technology shift and upgrades required for Covid-19.

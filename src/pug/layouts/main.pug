@@ -1,7 +1,8 @@
 doctype html
 head
     title Jonathan's Website
-    block scripts append 
+    block scripts append
+        script(src="js/index.js")
         
     block css append
         link(rel="stylesheet" href="css/main.css")
@@ -9,21 +10,21 @@ head
 body
     block nav
         header.p-3.bg-dark.text-white
-            .container 
-                .flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
-                    a.d-flex.align-items-center.mb-2.mb-lg-0.text-decoration-none(href="index.html") JL
-
-                    ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
-                        li
-                            a.nav-link.px-2.text-secondary(href="index.html") Home
-                        li
-                            a.nav-link.px-2.text-secondary(href="resume.html") Resume
-                        li
-                            a.nav-link.px-2.text-secondary(href="projects.html") Projects
+            nav.navbar.navbar-expand.navbar-dark.bg-dark 
+                .container-fluid
+                    a.navbar-brand(href="index.html") JL
+                    .flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+                    .collapse.navbar-collapse
+                        ul.navbar-nav.me-auto 
+                            li.nav-items 
+                                a.nav-link(href="index.html") Home
+                            li.nav-items 
+                                a.nav-link(href="resume.html") Resume
+                            li.nav-items 
+                                a.nav-link(href="projects.html") Projects
 
                 span.text-end
-                    button.btn.btn-outline-light(type="button")
-                        a(href="mailto:jonathan.loewen@outlook.com") Contact Me
+                    input.btn.btn-primary.btn-lg.gap-3(type='button' value="Contact Me" onclick="window.location.href='mailto:jonathan.loewen@outlook.com'")
 
     block content 
 
