@@ -1,7 +1,7 @@
 extends layouts/main.pug
 
 block scripts
-    script(src="js/resume.js")
+    script(src='js/resume.js')
 
 block content
     .card 
@@ -10,39 +10,26 @@ block content
             h4.card-text 3rd Year Mechanical Engineering Student from Langley, BC
             input.btn.btn-lg.btn-primary(type='button' onclick="window.location.href='mailto:jonathan.loewen@outlook.com'" value="jonathan.loewen@outlook.com")
             input.btn.btn-lg.btn-primary(type='button' onclick="window.location.href='tel:7785807784'" value="(778) 580-7784")
-    .row.row-cols-1.row-cols-md-2.g-4
-        span#skill-span.card
-            h2#skills Skills
-            .card
+    .grid-container
+        span#skill-span.card.m-2
+            h2#skills.p-2.ml-2 Skills
+            .card.m-2
                 h4#software Software
                 ul
-                    button.btn.btn-outline-secondary.m-2(type="button") AutoCAD 
-                    button.btn.btn-outline-secondary.m-2(type="button") SolidWorks
-                    button.btn.btn-outline-secondary.m-2(type="button") Python
-                    button.btn.btn-outline-secondary.m-2(type="button") MS Office
-                    button.btn.btn-outline-secondary.m-2(type="button") Matlab
-                    button.btn.btn-outline-secondary.m-2(type="button") C/C++
-                    button.btn.btn-outline-secondary.m-2(type="button") Linux 
-
-            .card 
+                    each skill in ["AutoCAD", "SolidWorks", "Python", "MS Office", "Matlab", "C/C++", "Linux" ]
+                        button.btn.btn-outline-secondary.m-2(type="button")= skill
+                     
+            .card.m-2
                 h4#hardware Hardware
                 ul 
-                    button.btn.btn-outline-secondary.m-2(type="button") Arduino
-                    button.btn.btn-outline-secondary.m-2(type="button") 3D printers
-                    button.btn.btn-outline-secondary.m-2(type="button") Latheli Welding
-                    button.btn.btn-outline-secondary.m-2(type="button") Oscilloscope
-                    button.btn.btn-outline-secondary.m-2(type="button") Prototyping
-                    button.btn.btn-outline-secondary.m-2(type="button") Ultrasonic Thickness Meter
-                    button.btn.btn-outline-secondary.m-2(type="button") Flow Meter
-            
-            .card
+                    each skill in ["Arduino","3D printers","Lathe","Welding","Oscilloscope","Prototyping","Ultrasonic Thickness Meter","Flow Meter"]
+                        button.btn.btn-outline-secondary.m-2(type="button")= skill
+
+            .card.m-2
                 h4#general General
                 ul
-                    button.btn.btn-outline-secondary.m-2(type="button") Class 5 BC Drivers License
-                    button.btn.btn-outline-secondary.m-2(type="button") Leadership
-                    button.btn.btn-outline-secondary.m-2(type="button") Interpersonal Skills
-                    button.btn.btn-outline-secondary.m-2(type="button") Detail Oriented
-                    button.btn.btn-outline-secondary.m-2(type="button") Time Management
+                    each skill in ["Class 5 BC Drivers License","Leadership","Interpersonal Skills","Detail Oriented","Time Management"]
+                        button.btn.btn-outline-secondary.m-2(type="button")= skill
 
         span#education-span.card
             h2#education Education
@@ -62,26 +49,24 @@ block content
         span#coursework-span.card
             h2#coursework.card-title Coursework
             h4#extracurricular Extracurricular
-            ul 
-                button.btn.btn-outline-secondary.m-2(type="button") UBCO Aerospace Club
-                button.btn.btn-outline-secondary.m-2(type="button") UBCO CFD Lab
+            ul
+                each course in [ "UBCO Aerospace Club","UBCO CFD Lab"]
+                    button.btn.btn-outline-secondary.m-2(type="button")= course
             h4#undergraduate Undergraduate
             ul 
-                button.btn.btn-outline-secondary.m-2(type="button") Fluid Dynamics 2
+                each course in ["Fluid Dynamics 2"]
+                    button.btn.btn-outline-secondary.m-2(type="button")= course
 
         span#hobbies-span.card
             h2#hobbies.card-title Hobbies
             ul 
-                button.btn.btn-outline-secondary.m-2(type="button") Computational Fluid Dynamics
-                button.btn.btn-outline-secondary.m-2(type="button") Machine Learning 
-                button.btn.btn-outline-secondary.m-2(type="button") Music 
-                button.btn.btn-outline-secondary.m-2(type="button") Learning New Software 
-                button.btn.btn-outline-secondary.m-2(type="button") 3D Printing/Rapid Prototyping
+                each hobby in ["Computational Fluid Dynamics","Machine Learning","Music","Learning New Software","3D Printing/Rapid Prototyping"]
+                    button.btn.btn-outline-secondary.m-2(type="button")= hobby
 
         span#work-experience-span.card
             h2#work-experience.card-title Work Experience
-            .card
-                .card-header.accordion
+            .card.accordion
+                .card-header
                     h4#lantic Lantic Inc.
                     h5 Engineering Coop Student
                 .card-body
@@ -95,7 +80,7 @@ block content
                             | Wrote documents requesting funds, completed projects, and technical
                             | reports.
                         li Completed pump sizing calculations which I used to get a supplier's quote.
-            .card
+            .card.accordion
                 .card-header
                     h4#cfd-lab UBCO CFD LAB
                     h5 Undergraduate Research Assistant
@@ -106,7 +91,7 @@ block content
                         li Learned advanced CFD topics for analyzing fluid flow in small (capillary) tubes.
                         li Analyzed simulation and looked for anomalies to present in a weekly meeting.
                         li Automated workflow in python to more efficiently use time.
-            .card
+            .card.accordion
                 .card-header
                     h4#mcasphalt MCASPHALT INC. 
                     h5 General Labourer
@@ -123,7 +108,7 @@ block content
 
         span#technical-projects-span.card
             h2#technical-projects Technical Projects
-            .card
+            .card.accordion
                 .card-header
                     h4#slr Self Landing Model Rocket
                     h5 UBCO Aerospace Club
@@ -133,7 +118,7 @@ block content
                     ul
                         li Managed 3 subteams with 8+ students combined.
                         li Interfaced between executives and subteams to show progress, set goals, and explain needs.
-            .card 
+            .card.accordion
                 .card-header 
                     h4#popsicle-bridge Popsicle Bridge
                     h5 Mechanics Class Project
@@ -143,7 +128,7 @@ block content
                     ul
                         li Designed, tested, and manufactured a popsicle bridge using joint analysis in Maple.
                         li Modelled using 2D and 3D CAD software for truss testing.
-            .card 
+            .card.accordion
                 .card-header
                     h4#line-following-robot Line Following Robot
                     h5 Microcontrollers Class Project
@@ -157,7 +142,7 @@ block content
         
         span#volunteer-experience-span.card
             h2#volunteer-experience volunteer-experience
-            .card 
+            .card.accordion
                 .card-header 
                     h4#slr Head of Visual Media
                     h5 Aldergrove Alliance Church
