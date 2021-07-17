@@ -1,5 +1,51 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 .grid-container {
-    grid-template-columns: 50% 50%;
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 30% 70%;
+}
+
+.accordion{
+    margin: .5rem;
+}
+
+.card > h2 {
+    margin: .5rem;
+}
+
+.btn{
+    margin: .5rem;
+}
+
+.card-header > h2{
+    margin: .5rem;
+}
+
+.card-header h4{
+    margin: .5rem;
+}
+
+.card{
+    margin: .5rem;
+}
+
+.card h4{
+    margin: .5rem;
+}
+
+.education-time{
+    margin: .5rem;
+}
+
+.education-place{
+    margin: .5rem;
+}
+
+.education-sub {
+    margin: .5rem;
+}
+
+.header{
+    text-align: center;
 }
