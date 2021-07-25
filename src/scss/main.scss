@@ -1,9 +1,20 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
-.grid-container {
-    display: grid;
-    grid-auto-flow: row dense;
-    grid-template-columns: 30% 70%;
+@media screen and (min-width: 900px){
+    .grid-container {
+        display: grid;
+        grid-auto-flow: row dense;
+        grid-template-columns: 30% 70%;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    .grid-container {
+        display: grid;
+        grid-auto-flow: row dense;
+        grid-template-columns: 1fr;
+    }
 }
 
 .accordion{
@@ -18,11 +29,7 @@
     margin: .5rem;
 }
 
-.card-header > h2{
-    margin: .5rem;
-}
-
-.card-header h4{
+h2{
     margin: .5rem;
 }
 
@@ -30,7 +37,7 @@
     margin: .5rem;
 }
 
-.card h4{
+.leftbar-subheader{
     margin: .5rem;
 }
 

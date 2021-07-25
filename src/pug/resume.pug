@@ -1,6 +1,6 @@
 extends layouts/main.pug
 
-block scripts
+block append scripts
     script(src='js/resume.js')
 
 block content
@@ -14,20 +14,20 @@ block content
         .col-left
             span#skill-span
                 h2#skills Skills
-                .card
-                    h4#software Software
+                .card.accordion
+                    h4#software.leftbar-subheader Software
                     ul
                         each skill in ["AutoCAD", "SolidWorks", "Python", "MS Office", "Matlab", "C/C++", "Linux" ]
                             button.btn.btn-outline-secondary(type="button")= skill
                         
-                .card
-                    h4#hardware Hardware
+                .card.accordion
+                    h4#hardware.leftbar-subheader Hardware
                     ul 
                         each skill in ["Arduino","3D printers","Lathe","Welding","Oscilloscope","Prototyping","Ultrasonic Thickness Meter","Flow Meter"]
                             button.btn.btn-outline-secondary(type="button")= skill
 
-                .card
-                    h4#general General
+                .card.accordion
+                    h4#general.leftbar-subheader General
                     ul
                         each skill in ["Class 5 BC Drivers License","Leadership","Interpersonal Skills","Detail Oriented","Time Management"]
                             button.btn.btn-outline-secondary(type="button")= skill
@@ -36,33 +36,37 @@ block content
                 h2#education Education
                 .card
                     div.specific-education
-                        h4.education-title UBC Okanagan 
+                        h4.education-title.leftbar-subheader UBC Okanagan 
                         h5.education-sub BASc. Mechanical Engineering 
                         .education-time 09/2018 - Present 
                         .education-place Kelowna, BC
                 .card 
                     div.specific-education
-                        h4.education-title Kwantlen Polytechnic University
+                        h4.education-title.leftbar-subheader Kwantlen Polytechnic University
                         h5.education-sub First Year Engineering
                         .education-time 09/2017 - 04/2018
                         .education-place Surrey, BC
 
-            span#coursework-span.card
-                h2#coursework.card-title Coursework
-                h4#extracurricular Extracurricular
-                ul
-                    each course in [ "UBCO Aerospace Club","UBCO CFD Lab"]
-                        button.btn.btn-outline-secondary(type="button")= course
-                h4#undergraduate Undergraduate
-                ul 
-                    each course in ["Fluid Dynamics 2"]
-                        button.btn.btn-outline-secondary(type="button")= course
+            span#coursework-span
+                h2#coursework Coursework
+                .card.accordion
+                    h4#extracurricular.leftbar-subheader Extracurricular
+                    ul
+                        each course in [ "UBCO Aerospace Club","UBCO CFD Lab"]
+                            button.btn.btn-outline-secondary(type="button")= course
+                .card.accordion
+                    h4#undergraduate.leftbar-subheader Undergraduate
+                    ul 
+                        each course in ["Fluid Dynamics 2"]
+                            button.btn.btn-outline-secondary(type="button")= course
 
-            span#hobbies-span.card
-                h2#hobbies.card-title Hobbies
-                ul 
-                    each hobby in ["Computational Fluid Dynamics","Machine Learning","Music","Learning New Software","3D Printing/Rapid Prototyping"]
-                        button.btn.btn-outline-secondary(type="button")= hobby
+            span#hobbies-span
+                h2#hobbies Hobbies
+                .card.accordion
+                    h4#technical.leftbar-subheader Technical
+                    ul 
+                        each hobby in ["Computational Fluid Dynamics","Machine Learning","Music","Learning New Software","3D Printing/Rapid Prototyping"]
+                            button.btn.btn-outline-secondary(type="button")= hobby
         
         .col-right
             span#work-experience-span
